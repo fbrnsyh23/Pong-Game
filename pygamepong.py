@@ -1,11 +1,12 @@
-
+#Program Pong Game
+#by Fajar Febriansyah
 import pygame
 
 pygame.init()
 
 # Window setup
 
-win = pygame.display.set_mode((750, 500))
+win = pygame.display.set_mode((850, 600))
 
 pygame.display.set_caption('Pong')
 
@@ -13,6 +14,9 @@ pygame.display.set_caption('Pong')
 
 white = (255, 255, 255)
 black = (0, 0, 0)
+blue  = (0, 0, 255)
+red   = (255, 0, 0)
+green = (0, 255, 0)
 
 # Sprite Classes
 
@@ -36,7 +40,7 @@ class Ball(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface([10, 10])
-        self.image.fill(white)
+        self.image.fill(red)
         self.rect = self.image.get_rect()
         self.speed = 10
         self.dx = 1
@@ -67,11 +71,11 @@ all_sprites.add(paddle1, paddle2, pong)
 
 def redraw():
     # Draws black screen
-    win.fill(black)
+    win.fill(green)
 
     # Title font
     font = pygame.font.SysFont('Comic Sans MS', 30)
-    text = font.render('PONG', False, white)
+    text = font.render('PONG', False, green)
     textRect = text.get_rect()
     textRect.center = (750 // 2, 25)
     win.blit(text, textRect)
