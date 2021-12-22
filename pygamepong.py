@@ -6,7 +6,7 @@ pygame.init()
 
 # Window setup
 
-win = pygame.display.set_mode((850, 600))
+win = pygame.display.set_mode((750, 500))
 
 pygame.display.set_caption('Pong')
 
@@ -81,13 +81,13 @@ def redraw():
     win.blit(text, textRect)
 
     # Player 1 Score
-    p1_score = font.render(str(paddle1.points), False, white)
+    p1_score = font.render(str(paddle1.points), False, black)
     p1Rect = p1_score.get_rect()
     p1Rect.center = (50, 50)
     win.blit(p1_score, p1Rect)
 
     # Player 2 Score
-    p2_score = font.render(str(paddle2.points), False, white)
+    p2_score = font.render(str(paddle2.points), False, black)
     p2Rect = p2_score.get_rect()
     p2Rect.center = (700, 50)
     win.blit(p2_score, p2Rect)
